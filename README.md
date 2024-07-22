@@ -107,7 +107,7 @@ if b:
 ``` python
 hwp.Run("FileClose")
 hwp.Quit()
-
+```
 
 ## 문제 해결
 
