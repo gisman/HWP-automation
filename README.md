@@ -107,3 +107,20 @@ if b:
 ``` python
 hwp.Run("FileClose")
 hwp.Quit()
+
+
+## 문제 해결
+
+* pywintypes.com_error: (-2147221008, 'CoInitialize가 호출되지 않았습니다.
+=> Thread 에서 실행할 때 발생.
+``` python
+   pythoncom.CoInitialize()
+   hwp = win32.gencache.EnsureDispatch("hwpframe.hwpobject")
+   ... 작업 ...
+   pythoncom.CoUninitialize()
+```
+
+* AttributeError: module 'win32com.gen_py.7D2B6F3C-1D95-4E0C-BF5A-5EE564186FBCx0x1x0' has no attribute 'MinorVersion'
+=> AppData/Local/Temp.gen_py 삭제
+
+
